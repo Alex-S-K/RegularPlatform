@@ -1,6 +1,7 @@
 package com.alex.RegularPlatform.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Category {
     // 分类id
@@ -9,6 +10,15 @@ public class Category {
     private String name;
     // 创建时间
     private Timestamp createTime;
+
+    // 关联的短信列表
+    private List<Message> messages;
+
+    // 关联的正则列表
+    private List<Regular> regulars;
+
+    // 关联的子串列表
+    private List<SubRegular> subRegulars;
 
     /**************************** setter getter and toString *************************/
     public String getName() {
@@ -33,6 +43,30 @@ public class Category {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Regular> getRegulars() {
+        return regulars;
+    }
+
+    public void setRegulars(List<Regular> regulars) {
+        this.regulars = regulars;
+    }
+
+    public List<SubRegular> getSubRegulars() {
+        return subRegulars;
+    }
+
+    public void setSubRegulars(List<SubRegular> subRegulars) {
+        this.subRegulars = subRegulars;
     }
 
     @Override

@@ -15,10 +15,12 @@ public class Message {
     private Timestamp createTime;
     // 是否被正则覆盖
     private boolean status;
-    // 分类 的id（外键）
-    private int category_id;
-    // 正则 的id（外键）
-    private int regular_id;
+
+    // 关联的分类
+    private Category category;
+
+    // 关联的规则
+    private Regular regular;
 
     /************************* setter, getter and toString ***************************/
     public int getId() {
@@ -61,20 +63,20 @@ public class Message {
         this.status = status;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public int getRegular_id() {
-        return regular_id;
+    public Regular getRegular() {
+        return regular;
     }
 
-    public void setRegular_id(int regular_id) {
-        this.regular_id = regular_id;
+    public void setRegular(Regular regular) {
+        this.regular = regular;
     }
 
     @Override
@@ -85,8 +87,6 @@ public class Message {
                 ", content='" + content + '\'' +
                 ", createTime=" + createTime +
                 ", status=" + status +
-                ", category_id=" + category_id +
-                ", regular_id=" + regular_id +
                 '}';
     }
 }
