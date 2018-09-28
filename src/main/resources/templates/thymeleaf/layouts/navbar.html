@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-fixed-top navbar-inverse" th:fragment="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">正则平台</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li id="home"><a href="/">首页</a></li>
+                <li id="sub_regular"><a href="/sub_regular/">正则子串</a></li>
+                <li id="upload"><a href="/upload/">上传</a></li>
+                <li id="download"><a href="/download/">下载</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- head 为可引用的模板，title参数为标题，links可以传入想要注入的css -->
+<head th:fragment="head(title, links)">
+    <meta charset="UTF-8">
+    <title th:replace="${title}">正则平台</title>
+    <!-- 引入bootstrap和jQuery -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="/static/css/layouts.css" type="text/css" th:href="@{/css/layouts.css}">
+    <script src="/static/js/bootstrap.min.js" type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="/static/js/jquery3.3.1.min.js" type="text/javascript" th:src="@{/js/jquery3.3.1.min.js}"></script>
+    <!-- links 块 -->
+    <th:block th:replace="${links}"></th:block>
+</head>
+<body>
+
+</body>
+</html>

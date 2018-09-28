@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface MessageMapper {
+    /**
+     * 插入一条短信
+     * @param message
+     */
     @Insert("INSERT INTO messages(tel_number, content, create_time, category_id) VALUES(#{msg.telNumber}, #{msg.content}, #{msg.createTime}, #{msg.category.id})")
     void add(@Param("msg") Message message);
 }
