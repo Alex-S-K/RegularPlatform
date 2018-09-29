@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>正则平台 - 上传</title>
+</head>
+<body>
+<!-- 引入导航栏 -->
+<nav th:replace="layouts/navbar :: navbar"></nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">上传文件须知</h4>
+                </div>
+                <div class="panel-body">
+                    <p>上传的文件格式必须为 <code>.txt</code> 格式，并且需要分为3列，分别为<b>号码列</b>、<b>短信列</b>和<b>分类列</b>。如以下示例的格式：</p>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <td>号码</td>
+                            <td>短信</td>
+                            <td>分类</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>10086</td>
+                            <td>【中国移动】您好，您本月流量已用：333MB，套餐内剩余流量：800MB，套餐为：中国移动4G套餐A；如您想修改套餐请致电：10086。谢谢【流量提醒】</td>
+                            <td>运营商</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="upload_file">请选择文件</label>
+                            <input type="file" name="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">上传</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- js -->
+<script type="text/javascript">
+    document.getElementById("upload").setAttribute("class", "active")
+</script>
+</body>
+</html>
